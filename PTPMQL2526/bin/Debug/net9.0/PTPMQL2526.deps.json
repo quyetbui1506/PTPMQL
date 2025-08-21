@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "PTPMQL2526/1.0.0": {
+        "runtime": {
+          "PTPMQL2526.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PTPMQL2526/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
