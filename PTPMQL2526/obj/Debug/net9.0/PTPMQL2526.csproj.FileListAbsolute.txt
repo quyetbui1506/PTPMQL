@@ -94,3 +94,4 @@ C:\PTPMQL\PTPMQL2526\obj\Debug\net9.0\refint\PTPMQL2526.dll
 C:\PTPMQL\PTPMQL2526\obj\Debug\net9.0\PTPMQL2526.pdb
 C:\PTPMQL\PTPMQL2526\obj\Debug\net9.0\PTPMQL2526.genruntimeconfig.cache
 C:\PTPMQL\PTPMQL2526\obj\Debug\net9.0\ref\PTPMQL2526.dll
+C:\PTPMQL\PTPMQL2526\obj\Debug\net9.0\PTPMQL2526.sourcelink.json
