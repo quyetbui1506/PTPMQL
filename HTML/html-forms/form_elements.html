@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="cars">Họ tên: Bùi Doãn Quyết:</label>
+    <select id="cars" name="cars" size="4" multiple>
+      <option value="volvo">MSV: 2221050298</option>
+      <option value="saab">MSV: 2221050298</option>
+      <option value="fiat">MSV: 2221050298</option>
+      <option value="audi">MSV: 2221050298</option>
+    </select>
+    <textarea name="message" rows="10" cols="30">
+        Họ tên: Bùi Doãn Quyết
+    </textarea>
+    <button type="button" onclick="alert('Hello World!')">
+      MSV: 2221050298
+    </button>
+    <form action="/action_page.php">
+      <fieldset>
+        <legend>Họ tên: Bùi Doãn Quyết</legend>
+        <label for="fname">Họ tên: Bùi Doãn Quyết</label><br />
+        <input type="text" id="fname" name="fname" value="Jane" /><br />
+        <label for="lname">MSV: 2221050298</label><br />
+        <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+    <form action="/action_page.php">
+      <input list="browsers" />
+      <datalist id="browsers">
+        <option value="Edge"></option>
+        <option value="Firefox"></option>
+        <option value="Chrome"></option>
+        <option value="Opera"></option>
+        <option value="Safari"></option>
+      </datalist>
+    </form>
+  </body>
+</html>

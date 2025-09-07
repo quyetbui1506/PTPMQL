@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    <style>
+      .border,
+      .border-top,
+      .border-end,
+      .border-bottom,
+      .border-start {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        margin: 6px;
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <span class="border border-1 rounded"></span>
+      <span class="border border-0 border-2 rounded-top"></span>
+      <span class="border border-top-0 border-3 rounded-end"></span>
+      <span class="border border-end-0 border-4 rounded-bottom"></span>
+      <span class="border border-bottom-0 border-5 rounded-start"></span>
+      <span class="border border-start-0 border-primary rounded-circle"></span>
+      <span class="border-top border-info rounded-0"></span>
+      <span class="border-end border-success rounded-1"></span>
+      <span class="border-bottom border-danger rounded-2"></span>
+      <span class="border-start border-warning rounded-3"></span>
+      <br />
+
+      <div class="clearfix">
+        <span class="float-start">Họ tên: Bùi Doãn Quyết</span>
+        <span class="float-end">MSV: 2221050298</span>
+      </div>
+      <br />
+
+      <div class="mx-auto bg-warning" style="width: 200px">
+        Họ tên: Bùi Doãn Quyết
+      </div>
+      <br />
+
+      <div class="w-25 bg-warning">MSV: 2221050298</div>
+      <div class="w-50 bg-warning">Họ tên: Bùi Doãn Quyết</div>
+      <div class="w-75 bg-warning">MSV: 2221050298</div>
+      <div class="w-100 bg-warning">Họ tên: Bùi Doãn Quyết</div>
+      <div class="w-auto bg-warning">MSV: 2221050298</div>
+      <div class="mw-100 bg-warning">Họ tên: Bùi Doãn Quyết</div>
+      <br />
+
+      <div class="container mt-3">
+        <div style="height: 200px; background-color: #ddd">
+          <div class="h-25 d-inline-block p-2 bg-warning">MSV: 2221050298</div>
+          <div class="h-50 d-inline-block p-2 bg-warning">
+            Họ tên: Bùi Doãn Quyết
+          </div>
+          <div class="h-75 d-inline-block p-2 bg-warning">MSV: 2221050298</div>
+          <div class="h-100 d-inline-block p-2 bg-warning">
+            Họ tên: Bùi Doãn Quyết
+          </div>
+          <div class="h-auto d-inline-block p-2 bg-warning">
+            MSV: 2221050298
+          </div>
+          <div
+            class="mh-100 d-inline-block p-2 bg-warning"
+            style="height: 500px"
+          >
+            Họ tên: Bùi Doãn Quyết
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div class="pt-4 bg-warning">MSV: 2221050298</div>
+      <div class="p-5 bg-success">Họ tên: Bùi Doãn Quyết</div>
+      <div class="m-5 pb-5 bg-info">MSV: 2221050298</div>
+
+      <div class="shadow-none p-4 mb-4 bg-light">Họ tên: Bùi Doãn Quyết</div>
+      <div class="shadow-sm p-4 mb-4 bg-white">MSV: 2221050298</div>
+      <div class="shadow p-4 mb-4 bg-white">Họ tên: Bùi Doãn Quyết</div>
+      <div class="shadow-lg p-4 mb-4 bg-white">MSV: 2221050298</div>
+      <br />
+
+      <span class="align-baseline">Họ tên: Bùi Doãn Quyết</span>
+      <span class="align-top">MSV: 2221050298</span>
+      <span class="align-middle">Họ tên: Bùi Doãn Quyết</span>
+      <span class="align-bottom">MSV: 2221050298</span>
+      <span class="align-text-top">Họ tên: Bùi Doãn Quyết</span>
+      <span class="align-text-bottom">MSV: 2221050298</span>
+      <br />
+
+      <!-- Aspect ratio 1:1 -->
+      <div class="ratio ratio-1x1">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      </div>
+      <!-- Aspect ratio 4:3 -->
+      <div class="ratio ratio-4x3">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      </div>
+      <!-- Aspect ratio 16:9 -->
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      </div>
+      <!-- Aspect ratio 21:9 -->
+      <div class="ratio ratio-21x9">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+      </div>
+      <br />
+
+      <div class="visible">Họ tên: Bùi Doãn Quyết</div>
+      <div class="invisible">MSV: 2221050298</div>
+      <br />
+
+      <button type="button" class="btn-close"></button>
+      <br />
+
+      <span class="visually-hidden">Họ tên: Bùi Doãn Quyết</span>
+      <br />
+
+      <p class="text-muted">MSV: 2221050298</p>
+      <p class="text-primary">Họ tên: Bùi Doãn Quyết</p>
+      <p class="text-success">MSV: 2221050298</p>
+      <p class="text-info">Họ tên: Bùi Doãn Quyết</p>
+      <p class="text-warning">MSV: 2221050298</p>
+      <p class="text-danger">Họ tên: Bùi Doãn Quyết</p>
+      <p class="text-secondary">MSV: 2221050298</p>
+      <p class="text-dark">Họ tên: Bùi Doãn Quyết</p>
+      <p class="text-body">MSV: 2221050298</p>
+      <p class="text-light">Họ tên: Bùi Doãn Quyết</p>
+      <p class="text-white">MSV: 2221050298</p>
+      <br />
+
+      <p class="text-bg-primary">Họ tên: Bùi Doãn Quyết</p>
+      <p class="text-bg-success">MSV: 2221050298</p>
+      <p class="text-bg-info">Họ tên: Bùi Doãn Quyết</p>
+      <p class="text-bg-warning">MSV: 2221050298</p>
+      <p class="text-bg-danger">Họ tên: Bùi Doãn Quyết</p>
+      <p class="text-bg-secondary">MSV: 2221050298</p>
+      <p class="text-bg-dark">Họ tên: Bùi Doãn Quyết</p>
+      <p class="text-bg-light">MSV: 2221050298</p>
+    </div>
+  </body>
+</html>

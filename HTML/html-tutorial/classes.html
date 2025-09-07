@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="myFunction()">Họ tên: Bùi Doãn Quyết</button>
+
+    <p class="name">Họ tên: Bùi Doãn Quyết</p>
+    <p class="msv">MSV: 2221050298</p>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementsByClassName("name");
+        for (var i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
