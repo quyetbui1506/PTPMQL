@@ -1,0 +1,8 @@
+<form asp-action="index" method="post">
+    <label>Nhập cân nặng(kg) :</label><br>
+    <input type="number" name="weight" step="any"><br>
+    <label>Nhập chiều cao(cm) :</label><br>
+    <input type="number" name="height" step="any"><br>
+    <input type="submit" value="Gửi dữ liệu">
+</form>
+<p>@ViewBag.Message</p>

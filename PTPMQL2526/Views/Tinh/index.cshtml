@@ -1,0 +1,14 @@
+<form asp-action="index" method="post">
+    <label>Nhập vào số thứ nhất</label><br>
+    <input type="number" name="so1"><br>
+    <label>Nhập vào số thứ hai</label><br>
+    <input type="number" name="so2"><br>
+    <select name="pheptoan">
+        <option value="cong">Cộng</option>
+        <option value="tru">Trừ</option>
+        <option value="nhan">Nhân</option>
+        <option value="chia">Chia</option>
+    </select><br>
+    <input type="submit" value="Gửi dữ liệu">
+</form>
+<p>@ViewBag.Message</p>
