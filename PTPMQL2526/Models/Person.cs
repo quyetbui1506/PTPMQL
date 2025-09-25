@@ -1,10 +1,16 @@
-namespace PTPMQL2526.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class Person
+namespace PTPMQL2526.Models
 {
-    public string PersonID { get; set; }
+    [Table("Persons")]
+    public class Person
+    {
+        [Key]
+        public string PersonID { get; set; }
 
-    public string FullName { get; set; }
+        public string FullName { get; set; }
 
-    public string Address { get; set; }
+        public string Address { get; set; }
+    }
 }

@@ -1,10 +1,40 @@
-<h2>Dữ liệu từ Controller gửi về là: @ViewBag.infoPerson</h2>
-<form asp-action="index" method="post"> 
-    <label>Nhập PersonID :</label>
-    <input type="text" name="PersonID">
-    <label>Nhập họ tên :</label>
-    <input type="text" name="FullName">
-    <label>Nhập địa chỉ :</label>
-    <input type="text" name="Address">
-    <input type="submit" value="Gửi dữ liệu">
-</form>
+@model IEnumerable<PTPMQL2526.Models.Person>
+
+@{
+    ViewData ["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" >Create new</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Address)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.PersonID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.PersonID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
