@@ -1,16 +1,19 @@
-@model PTPMQL2526.Models.Person
+@model PTPMQL2526.Models.Employee
 @{
     ViewData["Title"]="Create";
 }
 
 <h1>Create</h1>
-<h4>Person</h4>
+<h4>Employee</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input name="PersonID" value="@ViewBag.NewPersonId" readonly/>
+            <div class="form-group">
+                <label asp-for="PersonID" class="control-label"></label>
+                <input name="PersonID" value="@ViewBag.NewPersonId" class="form-control" readonly/>
+            </div>
             <div class="form-group">
                 <label asp-for="FullName" class="control-label"></label>
                 <input asp-for="FullName" class="form-control">
@@ -27,6 +30,17 @@
                     <option value="Nam">Nam</option>
                     <option value="Nữ">Nữ</option>
                 </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="EmployeeID" class="control-label"></label>
+                <input asp-for="EmployeeID" class="form-control">
+                <span asp-validation-for="EmployeeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control">
+                <span asp-validation-for="Age" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group">

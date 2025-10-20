@@ -1,4 +1,4 @@
-@model PTPMQL2526.Models.Person
+@model PTPMQL2526.Models.Employee
 @{
     ViewData["Title"]="Delete";
 }
@@ -6,7 +6,7 @@
 <h1>Delete</h1>
 <h3>Are you sure you want to delete that?</h3>
 <div>
-    <h4>Person</h4>
+    <h4>Employee</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -26,6 +26,18 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EmployeeID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Age)
         </dd>
     </dl>
     <form asp-action="Delete" >

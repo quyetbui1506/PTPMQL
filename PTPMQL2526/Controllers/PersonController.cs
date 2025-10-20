@@ -51,7 +51,7 @@ public class PersonController : Controller
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("PersonID, FullName, Address")] Person person)
+    public async Task<IActionResult> Create([Bind("PersonID, FullName, Address, Gender")] Person person)
     {
         var lastPerson = await _context.Person.OrderByDescending(p => p.PersonID).FirstOrDefaultAsync();
 
@@ -88,7 +88,7 @@ public class PersonController : Controller
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(string id, [Bind("PersonID, FullName, Address")] Person person)
+    public async Task<IActionResult> Edit(string id, [Bind("PersonID, FullName, Address, Gender")] Person person)
     {
         if (id != person.PersonID)
         {

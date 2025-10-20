@@ -1,16 +1,16 @@
-@model PTPMQL2526.Models.Person
+@model PTPMQL2526.Models.Employee
 @{
-    ViewData["Title"]="Create";
+    ViewData["Title"]="Edit";
 }
 
-<h1>Create</h1>
-<h4>Person</h4>
+<h1>Edit</h1>
+<h4>Employee</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input name="PersonID" value="@ViewBag.NewPersonId" readonly/>
+            <input type="hidden" asp-for="PersonID" />
             <div class="form-group">
                 <label asp-for="FullName" class="control-label"></label>
                 <input asp-for="FullName" class="form-control">
@@ -21,20 +21,32 @@
                 <input asp-for="Address" class="form-control">
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
-            <div>
+            <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
                 <select asp-for="Gender" class="form-control">
                     <option value="Nam">Nam</option>
                     <option value="Nữ">Nữ</option>
                 </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeID" class="control-label"></label>
+                <input asp-for="EmployeeID" class="form-control">
+                <span asp-validation-for="EmployeeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control">
+                <span asp-validation-for="Age" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>  
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
         </form>
         <br />
     </div>
+<div>
     <a asp-action="Index"> Back to List</a>
 </div>
 @section Scripts {

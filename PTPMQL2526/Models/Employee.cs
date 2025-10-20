@@ -1,9 +1,13 @@
-namespace PTPMQL2526.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class Employee : Person
+namespace PTPMQL2526.Models
 {
-    public string EmployeeID { get; set; }
+    [Table("Employees")]
+    public class Employee : Person
+    {
+        public string EmployeeID { get; set; }
 
-    public int Age { get; set; }
+        public int Age { get; set; }
 
+    }
 }

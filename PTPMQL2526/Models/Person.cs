@@ -12,5 +12,7 @@ namespace PTPMQL2526.Models
         public string FullName { get; set; }
 
         public string Address { get; set; }
+        
+        public string Gender { get; set; }
     }
 }
