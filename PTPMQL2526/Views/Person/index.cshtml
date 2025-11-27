@@ -1,4 +1,6 @@
 @model IEnumerable<PTPMQL2526.Models.Person>
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
 
 @{
     ViewData ["Title"] = "Index";
@@ -8,6 +10,7 @@
 
 <p>
     <a asp-action="Create" >Create new</a>
+    <a class="btn btn-success" asp-action="Download">Download</a>
 </p>
 <table class="table">
     <thead>

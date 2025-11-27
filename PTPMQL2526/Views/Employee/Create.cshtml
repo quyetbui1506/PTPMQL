@@ -33,9 +33,8 @@
             </div>
             <br />
             <div class="form-group">
-                <label asp-for="EmployeeID" class="control-label"></label>
-                <input asp-for="EmployeeID" class="form-control">
-                <span asp-validation-for="EmployeeID" class="text-danger"></span>
+                <label asp-for="PersonID" class="control-label"></label>
+                <input name="EmployeeID" value="@ViewBag.NewEmployeeId" class="form-control" readonly/>
             </div>
             <div class="form-group">
                 <label asp-for="Age" class="control-label"></label>

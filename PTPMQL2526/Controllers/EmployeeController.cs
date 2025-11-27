@@ -30,10 +30,29 @@ public class EmployeeController : Controller
     {
         var lastPerson = await _context.Person.OrderByDescending(e => e.PersonID).FirstOrDefaultAsync();
 
-        string newId = AutoCodeGenerator.GenerateNextCode(lastPerson?.PersonID);
+        string newPersonId = AutoCodeGenerator.GenerateNextCode(lastPerson?.PersonID, "PS");
 
         // gửi mã mới qua ViewBag
-        ViewBag.NewPersonId = newId;
+        ViewBag.NewPersonId = newPersonId;
+
+        var lastEmployee = await _context.Employee.OrderByDescending(e => e.EmployeeID).FirstOrDefaultAsync();
+
+        // Kiểm tra xem bảng Employee có dữ liệu chưa
+        string newEmployeeId;
+
+        if (lastEmployee == null)
+        {
+            // Nếu chưa có nhân viên nào → bắt đầu NV001
+            newEmployeeId = "NV001";
+        }
+        else
+        {
+            // Nếu đã có → tăng tiếp mã cuối
+            newEmployeeId = AutoCodeGenerator.GenerateNextCode(lastEmployee.EmployeeID, "NV");
+        }
+
+        // gửi mã mới qua ViewBag
+        ViewBag.NewEmployeeId = newEmployeeId;
 
         return View();
     }
@@ -41,13 +60,6 @@ public class EmployeeController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create([Bind("PersonID, FullName, Address, Gender, EmployeeID, Age")] Employee employee)
     {
-        var lastPerson = await _context.Person.OrderByDescending(e => e.PersonID).FirstOrDefaultAsync();
-
-        string newId = AutoCodeGenerator.GenerateNextCode(lastPerson?.PersonID);
-
-        // gán mã mới cho person
-        employee.PersonID = newId;
-
         // điều kiện cho tuổi
         if (employee.Age < 0)
         {
@@ -58,24 +70,18 @@ public class EmployeeController : Controller
         {
             ModelState.AddModelError("Age", "Em chưa 18");
         }
+
         
-        // điều kiện : id employee là khác nhau
-        if (_context.Employee.Any(e => e.EmployeeID == employee.EmployeeID))
-        {
-            ModelState.AddModelError("EmployeeID", "EmployeeID này đã tồn tại!");
-            ViewBag.NewPersonId = employee.PersonID;
-            return View(employee);
-        }
-    
         if (ModelState.IsValid)
         {
             _context.Add(employee);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-    
+
         // nếu có lỗi thì vẫn gửi lại mã để hiện trong View
-        ViewBag.NewPersonId = newId;
+        ViewBag.NewPersonId = employee.PersonID;
+        ViewBag.NewEmployeeId = employee.EmployeeID;
         return View(employee);
     }
     // Edit
@@ -111,34 +117,30 @@ public class EmployeeController : Controller
         {
             ModelState.AddModelError("Age", "Em chưa 18");
         }
-        
-        // điều kiện : id employee là khác nhau
-        if (_context.Employee.Any(e => e.EmployeeID == employee.EmployeeID))
+        if (!ModelState.IsValid)
         {
-            ModelState.AddModelError("EmployeeID", "EmployeeID này đã tồn tại!");
             return View(employee);
         }
-        if (ModelState.IsValid)
+
+        try
         {
-            try
-            {
-                _context.Update(employee);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!PersonExists(employee.PersonID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _context.Update(employee);
+
+            await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
-        return View(employee);
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!PersonExists(employee.PersonID))
+            {
+                return NotFound();
+            }
+            else
+            {
+                throw;
+            }
+        }
     }
     // Delete
     public async Task<IActionResult> Delete(string id)
